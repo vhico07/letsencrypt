@@ -65,6 +65,8 @@ server {
 }
 EOF
 
+# FOR NAME SERVER YOU CAN ADJUST YOUR NAME SERVER ALONG DOCUMENT ROOT YOU HAVE
+
 # DELETING DOCUMENT DEFAULT 
 echo "Menghapus file default pada $VHOST_DEL_AVAIL"
 sudo rm -rvf $VHOST_DEL_AVAIL 
@@ -103,3 +105,8 @@ CREATE_DB_QUERY
 echo "Sedang import data ke dalam database"
 sudo mysql -u devopscilsy -p$DBPASS dbsosmed < /home/ubuntu/small-project1/dump.sql
 echo "Selesai Import DATABASE"
+
+sudo certbot --nginx -d fesbuk.gonnabegood.xyz
+
+# RENEW CERTBOT
+# sudo certbot renew --dry-run
